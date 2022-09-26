@@ -1,12 +1,10 @@
-
-class Calculator{
+class Calculator {
   screens;
   div;
-  constructor(div){
-    this.div=document.querySelector(div);
-    
+  constructor(div) {
+    this.div = document.querySelector(div);
 
-    this.div.innerHTML=`<div class="w-50 card ml-5">
+    this.div.innerHTML = `<div class="w-50 card ml-5">
     <input type="text" class="form-control input-lg" readonly id="screen">
     <table style="width: 100%;" id="calc1">
       <tr>
@@ -27,47 +25,53 @@ class Calculator{
       </tr>
       <tr>
         <td colspan="6"><button class="btn btn-dark btn-block">=</button></td>
+        <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
       </tr>
     </table>
     </div>`;
-    this.screens=document.querySelector('#screen');
+    this.screens = document.querySelector("#screen");
 
-    const btn=document.querySelectorAll('table button');
+    const btn = document.querySelectorAll("table button");
 
-  btn.forEach((bt)=>{
-   
-    bt.addEventListener('click',()=>{
-     if (bt.innerText=='=') {
-      this.showAnswer()
-     }
-     else{
-       
-      this.showNumbas(bt.innerText)
-     }
-    })
-  })
-    
+    btn.forEach((bt) => {
+      bt.addEventListener("click", () => {
+        if (bt.innerText == "=") {
+          this.showAnswer();
+        } else {
+          if (bt.innerText == "CLR") {
+            this.clear();
+          } else {
+            this.showNumbas(bt.innerText);
+          }
+        }
+      });
+    });
   }
 
-  showNumbas(numbers){
+  showNumbas(numbers) {
     //log(numbers)
 
-   this.screens.value+=numbers
+    this.screens.value += numbers;
   }
 
-  showAnswer(){
-      try { 
-        this.screens.value=eval(this.screens.value)
-        
-      } catch (error) {
-        alert('INvalid something')
-        this.screens.value=''
-      }
+  showAnswer() {
+    try {
+      this.screens.value = eval(this.screens.value);
+    } catch (error) {
+      alert("INvalid something");
+      this.screens.value = "";
+    }
+  }
+  clear() {
+    this.screens.value = "";
   }
 
-  init(){
-
-  }
+  init() {}
 }
+
+// function clear() {
+//   let screens = document.querySelector("#screen");
+//   screens.innerHTML = "";
+// }
 
 // export default Calculator
