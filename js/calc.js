@@ -52,7 +52,7 @@ class Calculator{
   }
     
     showNumbers(numbers){
-        console.log(this.finalAns);
+        
        let screenVal=this.screen.value
        let last=screenVal[screenVal.length-1]
         if (this.operators.indexOf(numbers)>=0 && this.operators.indexOf(last)>=0) {
