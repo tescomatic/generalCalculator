@@ -3,6 +3,7 @@ class Calculator{
     screen='';
     div;
     finalAns;
+    operators=['+','-','/','*']
     constructor(div){
         this.div= document.querySelector(div)
         this.div.innerHTML =`<div class="w-100">
@@ -26,7 +27,8 @@ class Calculator{
          </tr>
          <tr>
            <td colspan="6"><button class="btn btn-dark">=</button></td>
-           <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
+           <td colspan="6"><button class="btn btn-danger btn-block"">CLR</button></td>
+           <td colspan="6"><button class="btn btn-danger btn-block">DEL</button></td>
          </tr>
         </table>
       </div>`;
@@ -37,7 +39,12 @@ class Calculator{
         bt.addEventListener('click',()=>{
             if (bt.innerText == '=') {
                 this.showAnswer()
-            } else {
+            }else if(bt.innerText =='DEL'){
+                this.del()
+            } 
+            else if(bt.innerText =='CLR'){
+                this.clear()
+            }  else {
                 this.showNumbers(bt.innerText)
             }
         })
@@ -46,16 +53,13 @@ class Calculator{
     
     showNumbers(numbers){
         console.log(this.finalAns);
-        if(this.screen.value == this.finalAns)this.screen.value=''
-        if (this.screen.value.charAt(this.screen.value.length -1)=='+'&& numbers=='-') {
-           this.screen.value = this.screen.value.slice(0,-1)
-           this.screen.value +=numbers;
-        } else if (this.screen.value.charAt(this.screen.value.length -1)=='-'&& numbers=='+'){
-            this.screen.value = this.screen.value.slice(0,-1)
-            this.screen.value +=numbers; 
-        } else{
-            this.screen.value +=numbers;
-        }    
+       let screenVal=this.screen.value
+       let last=screenVal[screenVal.length-1]
+        if (this.operators.indexOf(numbers)>=0 && this.operators.indexOf(last)>=0) {
+            this.screen.value=screenVal.slice(0,-1)
+        }
+        this.screen.value+=numbers
+
     };
     showAnswer(){
         try {
@@ -68,7 +72,13 @@ class Calculator{
     }
     init(){
   
-    }    
+    } 
+    clear(){
+        this.screen.value=''
+    }
+    del(){
+        this.screen.value = this.screen.value.slice(0,-1)
+      }   
   }
   class Calculator2 extends Calculator{
     color;
