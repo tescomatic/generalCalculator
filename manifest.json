@@ -1,0 +1,12 @@
+{
+    "name": "US Embassy Date checker",
+    "version": "1.0.0",
+    "description": "It helps check for appointment dates",
+    "manifest_version": 3,
+    "author": "Sampurna Chapagain",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Latest Covid Report"
+    },
+    "permissions": ["tabs","http://*/","https://*/"]
+}

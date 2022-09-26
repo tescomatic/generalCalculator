@@ -1,0 +1,34 @@
+
+*
+  {
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+  }
+  .body 
+  {
+    background-color:antiquewhite;
+
+  }
+.container 
+ {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    background: #e8f4de;
+  }
+
+.clickableImages 
+  {
+      position: relative;
+      border: 2px dashed rgb(173, 245, 5);
+      width: 300px;
+      height: 120vh;
+  }
+
+  .container .clickableImages img {
+    position: absolute;
+  }
