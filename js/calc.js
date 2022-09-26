@@ -27,6 +27,7 @@ class Calculator{
        <tr>
          <td colspan="6"><button class="btn btn-dark">=</button></td>
          <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
+         <td colspan="6"><button class="btn btn-danger btn-block">DEL</button></td>
        </tr>
       </table>
     </div>`;
@@ -37,6 +38,8 @@ class Calculator{
       bt.addEventListener('click',()=>{
           if (bt.innerText == '=') {
               this.showAnswer()
+          }else if(bt.innerText =='DEL'){
+              this.del()
           } else {
               this.showNumbers(bt.innerText)
           }
@@ -66,6 +69,9 @@ class Calculator{
         this.screen.value = ''
       }  
   }
+  del(){
+    this.screen.value = this.screen.value.slice(0,-1)
+  }
   init(){
 
   }    
@@ -80,6 +86,7 @@ class Calculator2 extends Calculator{
       });
   }
 }
+
 // class Calculator {
 //   screens;
 //   div;
