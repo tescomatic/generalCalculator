@@ -2,10 +2,9 @@
 class Calculator{
   screens;
   div;
-  constructor(div){
+  constructor(div,mycolor){
     this.div=document.querySelector(div);
-    
-
+    this.colors = document.querySelector(mycolor)
     this.div.innerHTML=`<div class="w-50 card ml-5">
     <input type="text" class="form-control input-lg" readonly id="screen">
     <table style="width: 100%;" id="calc1">
@@ -40,7 +39,7 @@ class Calculator{
      if (bt.innerText=='=') {
       this.showAnswer()
      }
-     else{
+     else {
        
       this.showNumbas(bt.innerText)
      }
@@ -60,7 +59,7 @@ class Calculator{
         this.screens.value=eval(this.screens.value)
         
       } catch (error) {
-        alert('INvalid something')
+        alert('Invalid Syntax')
         this.screens.value=''
       }
   }
@@ -71,3 +70,8 @@ class Calculator{
 }
 
 // export default Calculator
+class Second extends Calculator{
+  constructor(div2){
+    super(div2)
+  }
+}

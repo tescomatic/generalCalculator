@@ -7,7 +7,7 @@ let arr=[10.30,20,50,40,60,80]
 
 let arrs=[{name:'Teslim',email:'teslim@mail.com'}]
 
-let numbas=[1,2,3,4,5,6,7,8]
+let numbas=[1,2,3,4,5,6,7,8,9]
 
 
 word.innerHTML=numbas 
