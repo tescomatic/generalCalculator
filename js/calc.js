@@ -6,7 +6,7 @@ class Calculator{
     this.div=document.querySelector(div);
     
 
-    this.div.innerHTML=`<div class="w-50 card ml-5">
+    this.div.innerHTML=`<div class="w-50 card ml-5" style="background-color: red;">
     <input type="text" class="form-control input-lg" readonly id="screen">
     <table style="width: 100%;" id="calc1">
       <tr>
