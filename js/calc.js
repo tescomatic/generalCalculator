@@ -26,6 +26,7 @@ class Calculator{
        </tr>
        <tr>
          <td colspan="6"><button class="btn btn-dark">=</button></td>
+         <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
        </tr>
       </table>
     </div>`;
@@ -79,76 +80,74 @@ class Calculator2 extends Calculator{
       });
   }
 }
-class Calculator {
-  screens;
-  div;
-  constructor(div) {
-    this.div = document.querySelector(div);
+// class Calculator {
+//   screens;
+//   div;
+//   constructor(div) {
+//     this.div = document.querySelector(div);
 
-    this.div.innerHTML = `<div class="w-50 card ml-5">
-    <input type="text" class="form-control input-lg" readonly id="screen">
-    <table style="width: 100%;" id="calc1">
-      <tr>
-        <td><button class="btn btn-light">   1</button></td>
-        <td><button class="btn btn-light">   2</button></td>
-        <td><button class="btn btn-light">   3</button></td>
-        <td><button class="btn btn-light">   4</button></td>
-        <td><button class="btn btn-light">   5</button></td>
-        <td><button class="btn btn-light">   +</button></td>
-      </tr>
-      <tr>
-        <td><button class="btn btn-light">   6</button></td>
-        <td><button class="btn btn-light">   7</button></td>
-        <td><button class="btn btn-light">   8</button></td>
-        <td><button class="btn btn-light">   9</button></td>
-        <td><button class="btn btn-light">   0</button></td>
-        <td><button class="btn btn-light">   -</button></td>
-      </tr>
-      <tr>
-        <td colspan="6"><button class="btn btn-dark btn-block">=</button></td>
-        <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
-      </tr>
-    </table>
-    </div>`;
-    this.screens = document.querySelector("#screen");
+//     this.div.innerHTML = `<div class="w-50 card ml-5">
+//     <input type="text" class="form-control input-lg" readonly id="screen">
+//     <table style="width: 100%;" id="calc1">
+//       <tr>
+//         <td><button class="btn btn-light">   1</button></td>
+//         <td><button class="btn btn-light">   2</button></td>
+//         <td><button class="btn btn-light">   3</button></td>
+//         <td><button class="btn btn-light">   4</button></td>
+//         <td><button class="btn btn-light">   5</button></td>
+//         <td><button class="btn btn-light">   +</button></td>
+//       </tr>
+//       <tr>
+//         <td><button class="btn btn-light">   6</button></td>
+//         <td><button class="btn btn-light">   7</button></td>
+//         <td><button class="btn btn-light">   8</button></td>
+//         <td><button class="btn btn-light">   9</button></td>
+//         <td><button class="btn btn-light">   0</button></td>
+//         <td><button class="btn btn-light">   -</button></td>
+//       </tr>
+//       <tr>
+//         <td colspan="6"><button class="btn btn-dark btn-block">=</button></td>
+//         <td colspan="6"><button class="btn btn-danger btn-block" onclick="clear()">CLR</button></td>
+//       </tr>
+//     </table>
+//     </div>`;
+//     this.screens = document.querySelector("#screen");
 
-    const btn = document.querySelectorAll("table button");
+//     const btn = document.querySelectorAll("table button");
 
-    btn.forEach((bt) => {
-      bt.addEventListener("click", () => {
-        if (bt.innerText == "=") {
-          this.showAnswer();
-        } else {
-          if (bt.innerText == "CLR") {
-            this.clear();
-          } else {
-            this.showNumbas(bt.innerText);
-          }
-        }
-      });
-    });
-  }
+//     btn.forEach((bt) => {
+//       bt.addEventListener("click", () => {
+//         if (bt.innerText == "=") {
+//           this.showAnswer();
+//         } else {
+//           if (bt.innerText == "CLR") {
+//             this.clear();
+//           } else {
+//             this.showNumbas(bt.innerText);
+//           }
+//         }
+//       });
+//     });
+//   }
 
-  showNumbas(numbers) {
-    //log(numbers)
+//   showNumbas(numbers) {
+//     //log(numbers)
 
-    this.screens.value += numbers;
-  }
+//     this.screens.value += numbers;
+//   }
 
-  showAnswer() {
-    try {
-      this.screens.value = eval(this.screens.value);
-    } catch (error) {
-      alert("INvalid something");
-      this.screens.value = "";
-    }
-  }
-  clear() {
-    this.screens.value = "";
-  }
+//   showAnswer() {
+//     try {
+//       this.screens.value = eval(this.screens.value);
+//     } catch (error) {
+//       alert("INvalid something");
+//       this.screens.value = "";
+//     }
+//   }
 
-  init() {}
-}
+
+//   init() {}
+// }
 
 // function clear() {
 //   let screens = document.querySelector("#screen");
